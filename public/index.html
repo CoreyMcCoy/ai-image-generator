@@ -11,51 +11,68 @@
         <title>AI Image Generator</title>
     </head>
     <body>
-        <header>
-            <nav class="navbar">
-                <div class="logo">
-                    <h2>OpenAI Image Generator</h2>
-                </div>
-                <div class="nav-links">
-                    <ul>
-                        <li>
-                            <a href="https://beta.openai.com/docs" target="_blank">OpenAI API Docs</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
-        <main>
-            <section class="showcase">
-                <form id="image-form">
-                    <!-- image prompt -->
-                    <h1>Describe Your Image</h1>
-                    <div class="form-control">
-                        <input type="text" id="prompt" placeholder="Enter Text" />
+        <div class="container">
+            <header>
+                <nav class="navbar">
+                    <div class="logo">
+                        <h3>OpenAI Image Generator</h3>
                     </div>
-                    <!-- image size -->
-                    <div class="form-control">
-                        <select name="size" id="size">
-                            <option value="small" selected>Select a size</option>
-                            <option value="small">Small</option>
-                            <option value="medium">Medium</option>
-                            <option value="large">Large</option>
-                        </select>
+                    <div class="nav-links">
+                        <ul>
+                            <li>
+                                <p>
+                                    <a href="https://beta.openai.com/docs" target="_blank" class="link-text">View the OpenAI API docs</a>
+                                </p>
+                            </li>
+                        </ul>
                     </div>
-                    <button type="submit" class="btn">Generate</button>
-                </form>
-            </section>
+                </nav>
+            </header>
 
-            <!-- section for generated image -->
-            <section class="image">
-                <div class="image-container">
-                    <h2 class="msg"></h2>
-                    <img src="" alt="" id="image" />
-                </div>
-            </section>
-        </main>
+            <main>
+                <section class="showcase">
+                    <div class="description-text">
+                        <h1>OpenAI Image Generator</h1>
+                        <p>
+                            This is a simple web app for generating one-of-a-kind images based on a prompt. A prompt is a short description of what you want the image to be. For
+                            example, you can type "A polar bear eating ice cream..." and the app will generate an image of a polar bear eating ice cream.
+                        </p>
+                        <br />
+                        <p>
+                            The app uses the OpenAI API (a machine learning model that has been trained on billions of data points) to generate images. The results are not always
+                            perfect and sometimes the generated image is not what you expect. However, it is still a fun app to play around with.
+                        </p>
+                        <br />
+                        <p>Ready to give it a try?</p>
+                    </div>
+                    <form id="image-form">
+                        <!-- image prompt -->
+                        <div class="form-control">
+                            <input type="text" id="prompt" placeholder="Enter a prompt..." />
+                        </div>
+                        <!-- image size -->
+                        <div class="form-control">
+                            <select name="size" id="size">
+                                <option selected>Select a size</option>
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Generate</button>
+                    </form>
+                </section>
 
-        <div class="spinner"></div>
+                <!-- section for generated image -->
+                <section class="image">
+                    <div class="image-container">
+                        <h2 class="msg"></h2>
+                        <img src="" alt="" id="image" />
+                    </div>
+                </section>
+            </main>
+
+            <div class="spinner"></div>
+        </div>
     </body>
 </html>

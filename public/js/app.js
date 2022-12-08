@@ -7,8 +7,9 @@ function onSubmit(e) {
     const prompt = document.querySelector('#prompt').value;
     const size = document.querySelector('#size').value;
 
-    if (prompt === '') {
-        window.alert('Please add an image description');
+    if (prompt === '' || size === '') {
+        window.alert('Uh oh, enter a description and select a size');
+        return;
     }
 
     generateImageRequest(prompt, size);
@@ -36,6 +37,7 @@ async function generateImageRequest(prompt, size) {
 
         const imageUrl = data.data;
 
+        // Set image src to the imageUrl
         document.querySelector('#image').src = imageUrl;
 
         removeSpinner();
