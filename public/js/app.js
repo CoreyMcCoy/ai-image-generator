@@ -1,3 +1,4 @@
+// Get the form and add a submit event listener
 function onSubmit(e) {
     e.preventDefault();
 
@@ -15,6 +16,7 @@ function onSubmit(e) {
     generateImageRequest(prompt, size);
 }
 
+// Make a request to the server to generate an image
 async function generateImageRequest(prompt, size) {
     try {
         showSpinner();
@@ -46,12 +48,15 @@ async function generateImageRequest(prompt, size) {
     }
 }
 
+// Show spinner
 function showSpinner() {
     document.querySelector('.spinner').classList.add('show');
 }
 
+// Remove spinner
 function removeSpinner() {
     document.querySelector('.spinner').classList.remove('show');
 }
 
+// Add event listener to form
 document.querySelector('#image-form').addEventListener('submit', onSubmit);
